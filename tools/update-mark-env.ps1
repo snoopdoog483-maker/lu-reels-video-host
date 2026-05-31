@@ -34,6 +34,6 @@ function Set-EnvLine {
 $text = Set-EnvLine -Text $text -Name "LU_REELS_REPO_DIR" -Value $RepoDir
 $text = Set-EnvLine -Text $text -Name "LU_REELS_PUBLIC_BASE_URL" -Value $PublicBaseUrl
 
-Set-Content -LiteralPath $EnvFile -Value $text -Encoding UTF8
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($EnvFile, $text, $utf8NoBom)
 Write-Host "Updated $EnvFile"
-
