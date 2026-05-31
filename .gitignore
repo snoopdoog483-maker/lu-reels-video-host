@@ -1,0 +1,9 @@
+*
+!.gitignore
+!README.md
+!reels/
+!reels/.gitkeep
+!tools/
+!tools/*.ps1
+!*.cmd
+
